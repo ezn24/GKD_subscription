@@ -63,9 +63,9 @@ export default defineGkdApp({
           key: 0,
           fastQuery: true,
           activityIds:
-            'com.sec.android.app.samsungapps.SamsungAppsMainActivity',
+            '.SamsungAppsMainActivity',
           matches:
-            '@[vid="do_not_show_again_area_text"][visibleToUser=true][clickable=true]',
+            '[vid="do_not_show_again_area"][clickable=true][visibleToUser=true] > [text$="再顯示" || text$="再显示" || text="Not show"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/22320803',
         },
       ],
