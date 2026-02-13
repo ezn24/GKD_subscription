@@ -56,14 +56,16 @@ export default defineGkdApp({
     },
     {
       key: 3,
-      name: '局部广告-底部广告（国际版）',
+      name: '局部广告-应用推荐广告',
+      desc: '点击[今天不要再显示]',
       rules: [
         {
-          matches: '@[vid="do_not_show_again_area_text"]',
           fastQuery: true,
-          snapshotUrls: 'https://i.gkd.li/i/22320803',
           activityIds:
             'com.sec.android.app.samsungapps.SamsungAppsMainActivity',
+          matches:
+            '@[vid="do_not_show_again_area_text"][visibleToUser=true][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/22320803',
         },
       ],
     },
