@@ -28,12 +28,23 @@ export default defineGkdApp({
       name: '局部广告',
       rules: [
         {
+          key: 1,
+          name: '直播右侧卡片广告',
           fastQuery: true,
           activityIds: '.live.LivePlayActivity',
           matches:
             '@View[clickable=true][width<80&&height<80] +2 View >4 [text="立即查看"][visibleToUser=true]',
           exampleUrls: 'https://e.gkd.li/7c97fdc7-9de0-403d-9817-e43da0eb8a31',
           snapshotUrls: 'https://i.gkd.li/i/22743677',
+        },
+        {
+          key: 2,
+          name: '评论区评论氛围满意度',
+          fastQuery: true,
+          activityIds: 'com.ss.android.ugc.aweme.main.MainActivity',
+          matches:
+            'FrameLayout[childCount=7] > [text$="评论氛围是否满意？,匿名"] + UIImage[text="关闭,按钮"][clickable=true][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/25571238',
         },
       ],
     },
