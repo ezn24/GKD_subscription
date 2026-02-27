@@ -60,5 +60,20 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 5,
+      name: '权限提示-通知权限',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: 'com.yunma.app.ui.main.MainActivity',
+          matches: [
+            '[text*="将系统通知权限开启"]',
+            '[text="拒绝"][clickable=true]',
+          ],
+          snapshotUrls: 'https://i.gkd.li/i/25608212',
+        },
+      ],
+    },
   ],
 });
