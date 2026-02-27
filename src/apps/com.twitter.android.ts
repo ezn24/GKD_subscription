@@ -199,13 +199,13 @@ export default defineGkdApp({
     {
       key: 6,
       name: '功能类-自动点击翻译',
+      actionDelay: 1000, // 增加延迟待界面稳定
       rules: [
         {
           fastQuery: true,
           activityIds: 'com.twitter.tweetdetail.TweetDetailActivity',
           matches:
-            // '[vid="translation_link" || vid="grok_translation_link"][clickable=true][index=parent.childCount.minus(1)]', //由于未知原因还会重复点击 翻译
-            '[vid="translation_link" || vid="grok_translation_link"][text!="由 Google 翻译自英语"][clickable=true]',
+            '[vid="translation_container" || vid="main_container"] > [vid="translation_link" || vid="grok_translation_link"][clickable=true][index=parent.childCount.minus(1)]',
           exampleUrls: [
             'https://e.gkd.li/ced46989-9c6a-4626-b027-7953e0fdc2c6',
             'https://m.gkd.li/57941037/40ece44f-883f-429a-aa0c-17dac15a50e4',
@@ -213,10 +213,10 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/i/14189817',
             'https://i.gkd.li/i/14615911',
+            'https://i.gkd.li/i/25537171',
             'https://i.gkd.li/i/25461468',
             'https://i.gkd.li/i/25461607', // Grok translate
           ],
-          excludeSnapshotUrls: 'https://i.gkd.li/i/25537171', // 已翻译, 加 [text!="由 Google 翻译自英语"] 排除
         },
       ],
     },
