@@ -94,22 +94,31 @@ export default defineGkdApp({
     },
     {
       key: 4,
-      name: '功能类-自动允许USB调试_vivo',
-      desc: 'VIVO手机 选中 一律允许xxx-点击允许',
+      name: '功能类-自动允许USB调试',
+      desc: '点击 ①✅一律允许 ②确定',
       fastQuery: true,
-      activityIds: '.usb.UsbDebuggingActivity',
+      // activityIds: [
+      //   '.usb.HwUsbDebuggingActivity', //华为
+      //   '.usb.UsbDebuggingActivity',   //小米,VIVO
+      // ],
       rules: [
         {
           key: 0,
           matches:
-            '[text="一律允许使用这台计算机进行调试"][clickable=true][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/25619878', // 未选中
+            '[text$="这台计算机进行调试"][clickable=true][checked=false]',
+          exampleUrls: 'https://e.gkd.li/124fdf00-8901-463e-bb0b-ed6e8aadf3f7',
+          snapshotUrls: [
+            'https://i.gkd.li/i/25254577', //真我📱 无界面id
+            'https://i.gkd.li/i/25256690', //华为📱
+            'https://i.gkd.li/i/25256846', //红米📱 [checked=true]是选中状态
+            'https://i.gkd.li/i/25257004', //小米📱
+            'https://i.gkd.li/i/25619878', //VIVO📱 未选中
+            'https://i.gkd.li/i/25619884', //VIVO📱 已选中
+          ],
         },
         {
           preKeys: [0],
-          matches:
-            '@[text="允许"][clickable=true][visibleToUser=true] < [id="vivo:id/buttonbarPanel"]',
-          snapshotUrls: 'https://i.gkd.li/i/25619884', // 已选中
+          matches: '[text="允许" || text="确定"][clickable=true]', // 快照参考 子key 0 的
         },
       ],
     },
