@@ -32,7 +32,7 @@ export default defineGkdApp({
           actionMaximum: 1,
           resetMatch: 'app',
           activityIds: 'cn.com.hzb.mobilebank.per.MainActivity',
-          matches: '@[clickable=true] > [text="立即登录>"]',
+          matches: '@[clickable=true] > [text^="立即登录"]',
           snapshotUrls: 'https://i.gkd.li/i/25150391',
         },
       ],
