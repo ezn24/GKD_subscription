@@ -92,5 +92,26 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 4,
+      name: '功能类-自动允许USB调试_vivo',
+      desc: 'VIVO手机 选中 一律允许xxx-点击允许',
+      fastQuery: true,
+      activityIds: '.usb.UsbDebuggingActivity',
+      rules: [
+        {
+          key: 0,
+          matches:
+            '[text="一律允许使用这台计算机进行调试"][clickable=true][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/25619878', // 未选中
+        },
+        {
+          preKeys: [0],
+          matches:
+            '@[text="允许"][clickable=true][visibleToUser=true] < [id="vivo:id/buttonbarPanel"]',
+          snapshotUrls: 'https://i.gkd.li/i/25619884', // 已选中
+        },
+      ],
+    },
   ],
 });
