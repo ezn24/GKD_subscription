@@ -11,6 +11,13 @@
 - 建议安装 [Visual Studio Code](https://code.visualstudio.com/)
 - Fork 本项目, 然后 Clone 至本地, 切换到项目根目录，安装依赖 `pnpm install`
 
+> [!TIP]
+> 
+> 如果你已在系统安装Node.js_v18.12+，可直接使用下面命令安装pnpm
+```.bash
+npm install -g pnpm
+```
+
 ## 开始
 
 首先我们需要给需要添加规则的APP打快照, 也就是把APP的广告截图节点信息给保存下来 <https://i.gkd.li/i/12505276> (如何获取这个链接将在审查快照这一步说明)
