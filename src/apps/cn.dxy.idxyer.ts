@@ -58,7 +58,6 @@ export default defineGkdApp({
       desc: '点击:x取消',
       rules: [
         {
-          key: 0,
           fastQuery: true,
           activityIds: '.biz.main.MainActivity',
           matches: '[vid="iv_close_open_notification"]',
@@ -72,7 +71,6 @@ export default defineGkdApp({
       desc: '点击取消',
       rules: [
         {
-          key: 0,
           fastQuery: true,
           activityIds: '.common.WebViewActivity',
           matches: ['[text="开启悬浮小窗播放功能"]', '[text="取消"]'],
@@ -85,7 +83,6 @@ export default defineGkdApp({
       name: '功能类-丁香园安全中心-自动点击继续访问',
       rules: [
         {
-          key: 0,
           action: 'clickCenter',
           activityIds: '.common.OuterWebViewActivity',
           matches: '@Button[text="继续访问"][clickable=true]',
@@ -150,103 +147,92 @@ export default defineGkdApp({
     },
     {
       key: 9,
-      name: '功能类-📋病例视频自动慢速x0.5_选你想要的但不要多选!',
-      desc: '适合CT,MRI影像学深入分析',
+      name: '功能类-📋病例视频自动x0.5倍速(⚠️四选一)',
+      desc: '①调出倍速栏 ②选x0.5倍速',
       actionMaximum: 1,
       activityIds: '.biz.post.PostDetailActivity',
       rules: [
         {
           key: 0,
-          name: '调出倍速栏',
+          name: '①调出倍速栏',
           action: 'clickCenter',
           matches: '[text="Playback Rate"][clickable=true][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/24865795',
         },
         {
-          preKeys: [0],
-          key: 1,
-          name: '使用x0.5',
+          preKeys: [0], // 快照参考 子key0
+          name: '②选x0.5',
           action: 'clickCenter',
           matches: '@MenuItem[text="0.5x"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/24865795',
         },
       ],
     },
     {
-      key: 10,
-      name: '功能类-📋病例视频自动慢速x0.8_选你想要的但不要多选!',
-      desc: '适合CT,MRI影像学深入分析',
+      key: 10, // 功能相似,快照参考 key9
+      name: '功能类-📋病例视频自动x0.8倍速(⚠️四选一)',
+      desc: '①调出倍速栏 ②选x0.8倍速',
       actionMaximum: 1,
       activityIds: '.biz.post.PostDetailActivity',
       rules: [
         {
           key: 0,
-          name: '调出倍速栏',
+          name: '①调出倍速栏',
           action: 'clickCenter',
           matches: '[text="Playback Rate"][clickable=true][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/24865795',
         },
         {
           preKeys: [0],
-          key: 1,
-          name: '使用x0.8',
+          name: '②选x0.8',
           action: 'clickCenter',
           matches: '@MenuItem[text="0.8x"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/24865795',
         },
       ],
     },
     {
-      key: 11,
-      name: '功能类-📋病例视频自动倍速x1.5_选你想要的但不要多选!',
-      desc: '提高观看效率',
+      key: 11, // 功能相似,快照参考 key9
+      name: '功能类-📋病例视频自动x1.5倍速(⚠️四选一)',
+      desc: '①调出倍速栏 ②选x1.5倍速',
       actionMaximum: 1,
       activityIds: '.biz.post.PostDetailActivity',
       rules: [
         {
           key: 0,
-          name: '调出倍速栏',
+          name: '①调出倍速栏',
           action: 'clickCenter',
           matches: '[text="Playback Rate"][clickable=true][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/24865795',
         },
         {
           preKeys: [0],
-          key: 1,
-          name: '使用x1.5',
+          name: '②选x1.5',
           action: 'clickCenter',
           matches: '@MenuItem[text="1.5x"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/24865795',
         },
       ],
     },
     {
-      key: 12,
-      name: '功能类-📋病例视频自动倍速x2.0_选你想要的但不要多选!',
-      desc: '极限观看效率',
+      key: 12, // 功能相似,快照参考 key9
+      name: '功能类-📋病例视频自动x2.0倍速(⚠️四选一)',
+      desc: '①调出倍速栏 ②选x2.0倍速',
       actionMaximum: 1,
       activityIds: '.biz.post.PostDetailActivity',
       rules: [
         {
           key: 0,
-          name: '调出倍速栏',
+          name: '①调出倍速栏',
           action: 'clickCenter',
           matches: '[text="Playback Rate"][clickable=true][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/24865795',
         },
         {
           preKeys: [0],
-          key: 1,
-          name: '使用x2.0',
+          name: '②选x2.0',
           action: 'clickCenter',
           matches: '@MenuItem[text="2x"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/24865795',
         },
       ],
     },
     {
       key: 13,
-      name: '功能类-📖课程视频自动倍速x1.2⚠️选你想要的但不要多选!',
+      name: '功能类-📖课程视频自动x1.2倍速(❗三选一)',
       desc: '我们导师再也不卡壳啦',
       rules: [
         {
@@ -260,7 +246,7 @@ export default defineGkdApp({
     },
     {
       key: 14,
-      name: '功能类-📖课程视频自动倍速x1.5⚠️选你想要的但不要多选',
+      name: '功能类-📖课程视频自动x1.5倍速(❗三选一)',
       desc: '显著提高讲师效率',
       rules: [
         {
@@ -275,7 +261,7 @@ export default defineGkdApp({
     },
     {
       key: 15,
-      name: '功能类-📖课程视频自动倍速x2.0⚠️选你想要的但不要多选',
+      name: '功能类-📖课程视频自动x2.0倍速(❗三选一)',
       desc: '导师讲到冒烟不带停',
       rules: [
         {
