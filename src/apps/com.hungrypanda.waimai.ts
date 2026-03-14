@@ -16,7 +16,7 @@ export default defineGkdApp({
             'com.haya.app.pandah4a.ui.pay.success.order.PaySuccessActivity',
           ],
           matches: [
-            '[vid="iv_home_ad_close" || vid="iv_close"][clickable=true][visibleToUser=true]',
+            'ViewGroup[childCount=2 || childCount=3] > [vid="iv_home_ad_close" || vid="iv_close"][clickable=true][visibleToUser=true]',
           ],
           snapshotUrls: [
             'https://i.gkd.li/i/25813448', // iv_home_ad_close_首页
