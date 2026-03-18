@@ -85,6 +85,9 @@ export default defineGkdApp({
           key: 0,
           matches:
             'FrameLayout > RelativeLayout > @ImageView[vid!=null][clickable=true][visibleToUser=true] +(2,3) ImageView[vid!=null]',
+          excludeMatches:
+            '[text="空间音效" || text="蝰蛇"][visibleToUser=true]',
+          excludeSnapshotUrls: 'https://i.gkd.li/i/26030255', // 空间音效页面反复误触[desc="未选中空间音效"]
           snapshotUrls: [
             'https://i.gkd.li/i/14321713',
             'https://i.gkd.li/i/14321718',
@@ -136,8 +139,11 @@ export default defineGkdApp({
         {
           key: 2,
           matches:
-            '@[clickable=true][visibleToUser=true] - FrameLayout <<2 [id="android:id/content"]',
-          snapshotUrls: 'https://i.gkd.li/i/25640086',
+            'ViewGroup > [text="狠心拒绝"][clickable=true][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/25640086',
+            'https://i.gkd.li/i/26031222',
+          ],
           exampleUrls: 'https://e.gkd.li/1a5e5107-8e05-4031-873c-d3feed467cd7',
         },
       ],
@@ -146,13 +152,24 @@ export default defineGkdApp({
       key: 6,
       name: '功能类-播放页听歌领VIP',
       fastQuery: true,
-      activityIds: 'com.kugou.android.app.MediaActivity',
+      activityIds: [
+        'com.kugou.android.app.MediaActivity',
+        'com.kugou.framework.musicfees.ui.feeintercept.FeeInterceptWebActivity',
+        'com.kugou.android.app.flexowebview.KGFlexoWebActivity',
+      ],
       rules: [
         {
           key: 0,
-          matches: '@LinearLayout[clickable=true] > TextView[text="听歌领VIP"]',
-          exampleUrls: 'https://e.gkd.li/df927124-4e7a-43bd-8d42-3eb428eecf78',
-          snapshotUrls: 'https://i.gkd.li/i/16554695',
+          matches:
+            '@LinearLayout[clickable=true] +(7,8) LinearLayout > [text="评论"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/16554695',
+            'https://i.gkd.li/i/26031429',
+          ],
+          exampleUrls: [
+            'https://e.gkd.li/df927124-4e7a-43bd-8d42-3eb428eecf78',
+            'https://e.gkd.li/bda1a85c-0fab-48e6-bb3f-35fd8bd01464',
+          ],
         },
         {
           key: 1,
@@ -160,6 +177,21 @@ export default defineGkdApp({
             '@ImageView[clickable=true] - FrameLayout >2 [text="立即领取福利"]',
           exampleUrls: 'https://e.gkd.li/51fbe6aa-d0da-4f08-aae0-2eed4e6c0ad1',
           snapshotUrls: 'https://i.gkd.li/i/16594001',
+        },
+        {
+          key: 2,
+          preKeys: [0],
+          matches:
+            '@Button[text^="点击浏览10秒广告"] < * <4 View <2 * < * < * < WebView < WebView',
+          snapshotUrls: 'https://i.gkd.li/i/26031660',
+          exampleUrls: 'https://e.gkd.li/3b87b4b5-c144-4125-9218-ee78ce2a6399',
+        },
+        {
+          preKeys: [2],
+          matches: '[text="看1条广告领取明天"][visibleToUser=true]',
+          action: 'back',
+          snapshotUrls: 'https://i.gkd.li/i/26031715',
+          exampleUrls: 'https://e.gkd.li/59a14c6a-0e22-4a9e-9b9c-2f7eb462c69e',
         },
       ],
     },
@@ -208,12 +240,11 @@ export default defineGkdApp({
         },
         {
           key: 1,
+          fastQuery: true,
           matches:
-            '@ImageView[clickable=true][childCount=0][parent.childCount<4][index=parent.childCount.minus(1)][width<60 && height<60] - [!(text=null)]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/25021318',
-            'https://i.gkd.li/i/25021659',
-          ],
+            '@ImageView[clickable=true][parent.childCount<4][index=parent.childCount.minus(1)] <3 LinearLayout +(6,7) LinearLayout > [text="评论"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/25021318',
+          excludeSnapshotUrls: 'https://i.gkd.li/i/25021659', // 给key6活路
         },
       ],
     },

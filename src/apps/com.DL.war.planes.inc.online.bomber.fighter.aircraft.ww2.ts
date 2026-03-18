@@ -13,16 +13,18 @@ export default defineGkdApp({
           key: 0,
           activityIds: 'com.yandex.mobile.ads.common.AdActivity',
           anyMatches: [
-            '@ImageView[index=parent.childCount.minus(1)][clickable=true][visibleToUser=true] < ViewGroup <3 ViewGroup <2 ViewGroup +5 [text="Learn more"]',
-            '@ImageView - ViewGroup >2 [text="AD"][visibleToUser=true]',
-            '@[clickable=true] < ViewGroup - * >2 [text="AD · Mintegral"]',
-            '@ImageView[index=parent.childCount.minus(1)][clickable=true][visibleToUser=true] <<3 ViewGroup - *  > * + ViewGroup >2 [text^="AD"]',
+            '@ImageView[index=parent.childCount.minus(1)][clickable=true][visibleToUser=true] < ViewGroup <3 ViewGroup <2 ViewGroup +5 [text="Learn more"]', // 01
+            '@ImageView - ViewGroup >2 [text="AD"][visibleToUser=true]', // 02
+            '@[clickable=true] < ViewGroup - * >(1,2) [text^="AD"]', // 03
+            '@ImageView[index=parent.childCount.minus(1)][clickable=true][visibleToUser=true] <<(2,3) ViewGroup - *  > * + ViewGroup >2 [text^="AD"]', // 04
           ],
           snapshotUrls: [
-            'https://i.gkd.li/i/25241260',
-            'https://i.gkd.li/i/25241244',
-            'https://i.gkd.li/i/25855014',
-            'https://i.gkd.li/i/25932452',
+            'https://i.gkd.li/i/25241260', // 01
+            'https://i.gkd.li/i/25241244', // 02
+            'https://i.gkd.li/i/25855014', // 03_>2
+            'https://i.gkd.li/i/26025979', // 03_>
+            'https://i.gkd.li/i/25932452', // 04_<<3
+            'https://i.gkd.li/i/26025747', // 04_<<2
           ],
         },
         {

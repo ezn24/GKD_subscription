@@ -255,8 +255,7 @@ export default defineGkdApp({
         {
           key: 0,
           fastQuery: true,
-          activityIds:
-            'com.tencent.qqlive.redpacket.rain.OpenRedPacketActivity',
+          activityIds: '.redpacket.rain.OpenRedPacketActivity',
           matches:
             '@ImageView[clickable=true] < ViewGroup[childCount=5] < [id="android:id/content"]',
           exampleUrls:
@@ -266,7 +265,7 @@ export default defineGkdApp({
         {
           key: 1,
           fastQuery: true,
-          activityIds: 'com.tencent.qqlive.ona.activity.SplashHomeActivity',
+          activityIds: '.ona.activity.SplashHomeActivity',
           matches: '@RelativeLayout[clickable=true] + * >3 [text="立即预约"]',
           exampleUrls:
             'https://m.gkd.li/57941037/c8131a06-837a-4c42-9a70-9e8a7fe21334',
@@ -350,7 +349,7 @@ export default defineGkdApp({
           key: 0,
           name: '投屏页面广告',
           fastQuery: true,
-          activityIds: 'com.tencent.qqlive.ona.activity.VideoDetailActivity',
+          activityIds: '.ona.activity.VideoDetailActivity',
           matches: '@[clickable=true] - [text="广告"]',
           exampleUrls:
             'https://m.gkd.li/57941037/1b7518c9-4ca7-4905-8929-6f0130abf19f',
@@ -440,10 +439,11 @@ export default defineGkdApp({
     },
     {
       key: 23,
-      name: '其他-视频播放时的评价悬浮窗',
+      name: '评价提示-视频播放界面的评价悬浮窗',
       desc: '点击关闭',
       rules: [
         {
+          key: 0,
           actionDelay: 1000,
           fastQuery: true,
           activityIds: '.ona.activity.VideoDetailActivity',
@@ -451,6 +451,13 @@ export default defineGkdApp({
             '@View[clickable=true] + RecyclerView[childCount=5] > ViewGroup[childCount=2] > TextView[text="不推荐"][visibleToUser=true]',
           exampleUrls: 'https://e.gkd.li/b10125fa-5b1f-4a64-b258-392c57f4a1d8',
           snapshotUrls: 'https://i.gkd.li/i/20271517',
+        },
+        {
+          key: 1,
+          activityIds: '.kmm.VideoDetailKmmActivityBk',
+          matches:
+            '@View[clickable=true][width<80 && height<80] + [text^="我认为"]',
+          snapshotUrls: 'https://i.gkd.li/i/26016085',
         },
       ],
     },

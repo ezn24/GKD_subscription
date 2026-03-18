@@ -873,12 +873,19 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          activityIds: '.plugin.webview.ui.tools.MMWebViewUI',
+          activityIds: [
+            '.plugin.webview.ui.tools.MMWebViewUI',
+            '.ui.chatting.AppAttachNewDownloadUI',
+          ],
           matches: [
             '[text^="即将离开微信"][visibleToUser=true]',
             '[text="允许"][visibleToUser=true]',
           ],
-          snapshotUrls: 'https://i.gkd.li/i/24161524',
+          snapshotUrls: [
+            'https://i.gkd.li/i/24161524',
+            'https://i.gkd.li/i/26024460',
+          ],
+          exampleUrls: 'https://e.gkd.li/e48afed5-a42b-4167-b2f3-e0e89eb57645',
         },
       ],
     },
@@ -901,6 +908,21 @@ export default defineGkdApp({
             'https://e.gkd.li/51a4f07b-ca93-46f4-b301-9ed197862d96',
             'https://e.gkd.li/c4e42c3b-a071-427b-9a4c-a1035421836c',
           ],
+        },
+      ],
+    },
+    {
+      key: 46,
+      name: '功能类-文件自动app打开',
+      desc: '办公文档点下面第一个(默认)app打开',
+      fastQuery: true,
+      rules: [
+        {
+          activityIds: '.ui.chatting.AppAttachNewDownloadUI',
+          matches:
+            '@LinearLayout[clickable=true][index=0][childCount=2] < RecyclerView - [text="用QQ浏览器打开"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/26024073',
+          exampleUrls: 'https://e.gkd.li/13608598-f371-467a-8162-354110b8c79f',
         },
       ],
     },
